@@ -39,22 +39,19 @@ elif figure_type == 'круг':
     r = float(input())
     area = 3.14 * r **2
 print(area)
+
 #5
-def plural_form(n):
-    if n % 100 in (11, 12, 13, 14):
-        return "программистов"
-    elif n % 10 == 1:
-        return "программист"
-    elif 2 <= n % 10 <= 4:
-        return "программиста"
-    else:
-        return "программистов"
+n = int(input())
+if 11 <= n % 100 <=14:
+    word = "программистов"
+elif n  % 10 == 1:
+    word = "программист"
+elif 2 <= n % 10 <= 4:
+    word = "программиста"
+else:
+    word = "программистов"
+print(f"{n}{word}")
 
-n = int(input("Введите число программистов: "))
-
-result = f"{n} {plural_form(n)}"
-
-print(result)
 #6
 ticket_number = input("Введите номер билета: ")
 
