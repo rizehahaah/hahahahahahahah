@@ -1,0 +1,74 @@
+#1
+minutes = int(input('Введите количесво минут'))
+hours = minutes // 60
+remaining_minutes = minutes % 60
+print(f'{minutes} минут = {hours} часов {remaining_minutes} минут')
+
+#2
+A = int(input())
+B = int(input())
+C = int(input())
+if C < A:
+    print('недосып')
+elif C > B:
+    print('пересып')
+else:
+    print('норма')
+
+#3
+a = float(input())
+b = float(input())
+c = float(input())
+p = (a+b+c) / 2
+area = (p*(p-a)*(p-b)*(p-c)) ** 0.5
+print(area)
+
+#4
+figure_type = (input())
+if figure_type == 'треугольник':
+    a = float(input())
+    b = float(input())
+    c = float(input())
+    p = (a*b*c) / 2
+    area = (p*(p-a)*(p-b)*(p-c)) ** 0.5
+elif figure_type == 'прямоугольник':
+    a = float(input())
+    b = float(input())
+    area = a + b
+elif figure_type == 'круг':
+    r = float(input())
+    area = 3.14 * r **2
+print(area)
+#5
+def plural_form(n):
+    if n % 100 in (11, 12, 13, 14):
+        return "программистов"
+    elif n % 10 == 1:
+        return "программист"
+    elif 2 <= n % 10 <= 4:
+        return "программиста"
+    else:
+        return "программистов"
+
+n = int(input("Введите число программистов: "))
+
+result = f"{n} {plural_form(n)}"
+
+print(result)
+#6
+ticket_number = input("Введите номер билета: ")
+
+if len(ticket_number) != 6 or not ticket_number.isdigit():
+    print("Номер билета должен состоять из 6 цифр.")
+else:
+
+    digits = list(map(int, ticket_number))
+
+    sum_first_three = sum(digits[:3])
+
+    sum_last_three = sum(digits[3:])
+
+    if sum_first_three == sum_last_three:
+        print("Счастливый")
+    else:
+        print("Несчастливый")
