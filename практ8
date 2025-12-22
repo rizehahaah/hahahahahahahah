@@ -1,0 +1,40 @@
+# Задание 1
+my_dict = {1:'0101101', 2:'101110', 3:'1A14C', 4:'1100100', 5:'101010'}
+print("Исходный словарь:", my_dict)
+del my_dict[3]
+print("Изменённый словарь после удаления:", my_dict)
+my_dict[10] = '0100101'
+print("Итоговый словарь:", my_dict)
+
+# Задание 2
+sl = {'</>':13, 'script':1, '__init__':10, 'self':5, 'number_9':6, '#comment':100}
+print("Исходный словарь:", sl)
+key_input = input("Введите ключ: ")
+value_input = input("Введите значение: ")
+if value_input.isdigit():
+    value_input = int(value_input)
+else:
+    try:
+        value_input = float(value_input)
+    except ValueError:
+        pass
+sl[key_input] = value_input
+print("Обновленный словарь:", sl)
+
+# Задание 3
+dct = {}
+while len(dct) != 3:
+    key = input("Введите ключ (число): ")
+    if not key.isdigit():
+        print("Ошибка! Ключ должен быть числом.")
+        continue
+    value = input("Введите значение: ")
+    dct[int(key)] = value
+    print("Текущий словарь:", dct)
+
+# Задание 4
+all_d = {1:15, 4:80, 44:0, 256:15, 100:70, 101:70, 20:44, 3:9}
+keys_to_remove = [1, 101, 3]
+for key in keys_to_remove:
+    all_d.pop(key, None)
+print("Итоговый словарь:", all_d)
